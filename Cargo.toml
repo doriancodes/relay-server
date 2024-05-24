@@ -1,0 +1,11 @@
+[package]
+name = "relay-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.5.4", features = ["derive"] }
+async-std = { version = "1.12", features = ["attributes"] }
+async-trait = "0.1"
+libp2p = { features = [ "async-std", "noise", "macros", "ping", "tcp", "identify", "yamux", "relay", "quic"] }
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
