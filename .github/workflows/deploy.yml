@@ -18,5 +18,7 @@ jobs:
         with:
           authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
           tags: tag:deploy
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v4
+      - name: Build
+        run: cargo build --verbose --release
