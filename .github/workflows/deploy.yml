@@ -14,5 +14,5 @@ jobs:
 
     steps:
       - name: Build
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         run: cargo build --verbose --release
