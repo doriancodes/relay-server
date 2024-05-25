@@ -21,4 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build
-        run: cargo build --verbose --release
+        run: cargo build --release
+      - name: Prepare
+        run: |
+          mv ./target/release/relay-server ${{ secrets.SERVER_DIR }} \
+          cd ${{ secrets.SERVER_DIR }}
+      - name: Serve
+        run: ./relay-server --port 4001 --secret-key-seed 0
